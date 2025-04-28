@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  alerting-service:
+    build: .
+    container_name: alerting-service
+    env_file: .env
+    networks:
+      - kafka-net
+
+networks:
+  kafka-net:
+    external: true
